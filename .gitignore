@@ -1,3 +1,6 @@
+#Backend Temporary
+dir_to_ignore/Backend Temp
+
 # Logs
 logs
 *.log

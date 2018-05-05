@@ -87,7 +87,7 @@
                           </div>
                         </div>
                       </div>
-<script>
+<script type="text/javascript">
     // ============= THIS IS FOR MAKING TABLE RESERVATIONS SHOW AND HIDE =============
     $('#view_tables').on('click', function(event) {
         event.preventDefault();
@@ -112,6 +112,8 @@
             customerEmail:$('#reservation_email').val().trim(),
         }
         console.log(reserveGuest);
+
+        $.post("/api/tables", reserveGuest)
 
     })
 
