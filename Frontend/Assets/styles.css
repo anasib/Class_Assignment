@@ -1,0 +1,6 @@
+.table_list {
+    display: none;
+}
+.table_list.active {
+    display: block;
+}
