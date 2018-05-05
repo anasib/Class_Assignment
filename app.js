@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 var tablePath = "";
-var basePath = "./"
+var basePath = __dirname + '/';
 var reservationPath = "reservation.html";
 var waitingList = "waitlist.html";
 
@@ -52,9 +52,9 @@ app.post('/api/tables', (req, res) => {
 
 function errHandler(err) {
     if (err) {
-        next(err);
+        console.log(err);
     } else {
-        console.log('Sent:', fileName);
+        console.log('Sent a file');
     }
 }
 
