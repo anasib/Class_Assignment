@@ -20,14 +20,14 @@
                   </ul>
                 </div>
                 <div class="nav-content table_list">
-                  <ul class="tabs tabs-transparent">
+                  <ul id ='tablelist'class="tabs tabs-transparent">
                     <li class="tab"><a href="#test1">Paul</a></li>
                     <li class="tab"><a href="#test2">David</a></li>
                     <li class="tab"><a href="#test3">Disabled Tab</a></li>
                     <li class="tab"><a href="#test4">Test 4</a></li>
                   </ul>
                 </div>
-              </nav>
+              </nav>    
             
               <ul class="sidenav" id="mobile-demo">
                 <li><a href="sass.html">Sass</a></li>
@@ -95,6 +95,18 @@
         $('.table_list').removeClass('active')
     })
     // ===============================================================================
+    
+    $('.submit').on('click', function(){
+        event.preventDefault();
+        var reserveGuest = {
+            customerName:$('#reservation_name').val().trim(),
+            customerGuest:$('#reservation_guest').val().trim(),
+            uniqueId:$('#reservation_phone').val().trim(),
+            customerEmail:$('#reservation_email').val().trim(),
+        }
+        console.log(reserveGuest);
+        $('.tablelist').append("<li class='tab'><a href=''>"+reserveGuest.customerName+"</a></li>");
+    })
 
 
 </script>
