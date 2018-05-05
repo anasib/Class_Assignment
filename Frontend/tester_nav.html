@@ -88,34 +88,6 @@
                         </div>
                       </div>
 <script>
-    // ============= THIS IS FOR MAKING TABLE RESERVATIONS SHOW AND HIDE =============
-    $('#view_tables').on('click', function(event) {
-        event.preventDefault();
-        if($('.table_list').hasClass('active')) {
-            $('.table_list').removeClass('active');
-        }
-        else {
-            $('.table_list').addClass('active');
-        }
-    })
-    $('#make_reservations').on('click', function(event) {
-        $('.table_list').removeClass('active')
-    })
-    // ===============================================================================
-    
-    $('.submit').on('click', function(){
-        event.preventDefault();
-        var reserveGuest = {
-            customerName:$('#reservation_name').val().trim(),
-            customerGuest:$('#reservation_guest').val().trim(),
-            uniqueId:$('#reservation_phone').val().trim(),
-            customerEmail:$('#reservation_email').val().trim(),
-        }
-        console.log(reserveGuest);
-        $('.tablelist').append("<li class='tab'><a href=''>"+reserveGuest.customerName+"</a></li>");
-    })
-
-
 $( document ).ready(function() {
     $(".dropdown-trigger").dropdown();
 });
