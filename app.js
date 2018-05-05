@@ -13,10 +13,25 @@ var tablePath = "";
 var reservationPath = "";
 var waitingList = "";
 
+var customers = [{
+        customerName: "David",
+        phone: "777-777-7777",
+        email: "david@david.com",
+        customerId: "unique"
+    },
+    {
+        customerName: "Chris",
+        phone: "888-888-888",
+        email: "chris@chris.com",
+        customerId: "very unique"
+    }
+];
+
 app.get('/', (req, res) => res.send('Hello World!'));
 
-app.get('/api/tables', (req, res) =>
-    res.sendFile(tablePath, 'tables.html'));
+app.get('/customers', (req, res) => {
+    return res.json(customers)
+});
 
 app.get('/api/reservations', (req, res) =>
     res.sendFile(reservationPath, 'reservation.html'));
