@@ -42,6 +42,7 @@
               <div id="test4" class="col s12">Test 4</div> -->
 </body>
 <script>
+    // ============= THIS IS FOR MAKING TABLE RESERVATIONS SHOW AND HIDE =============
     $('#view_tables').on('click', function(event) {
         event.preventDefault();
         if($('.table_list').hasClass('active')) {
@@ -54,5 +55,8 @@
     $('#make_reservations').on('click', function(event) {
         $('.table_list').removeClass('active')
     })
+    // ===============================================================================
+
+    
 </script>
 </html>
