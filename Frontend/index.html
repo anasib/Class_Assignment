@@ -7,15 +7,16 @@
         <link rel="stylesheet" type="text/css" href="Assets/styles.css">
         <script src="https://code.jquery.com/jquery.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     </head>
 <body>
         <nav class="nav-extended">
                 <div class="nav-wrapper">
-                  <a href="#" class="brand-logo">CDPA Restaurant</a>
-                  <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                  <a href="index.html" class="brand-logo">CDPA Restaurant</a>
+                  <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">Menu</i></a>
                   <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a href="#" id="view_tables">View Tables</a></li>
-                    <li><a href="#" id="make_reservations">Make Reservations</a></li>
+                    <li><a href="reserve.html" id="make_reservations">Make Reservations</a></li>
                   </ul>
                 </div>
                 <div class="nav-content table_list">
@@ -34,6 +35,7 @@
                 <li><a href="collapsible.html">JavaScript</a></li>
               </ul>
             
+              
               <!-- <div id="test1" class="col s12">Test 1</div>
               <div id="test2" class="col s12">Test 2</div>
               <div id="test3" class="col s12">Test 3</div>
@@ -42,10 +44,14 @@
 <script>
     $('#view_tables').on('click', function(event) {
         event.preventDefault();
-        $('.table_list').addClass('active')
+        if($('.table_list').hasClass('active')) {
+            $('.table_list').removeClass('active');
+        }
+        else {
+            $('.table_list').addClass('active');
+        }
     })
     $('#make_reservations').on('click', function(event) {
-        event.preventDefault();
         $('.table_list').removeClass('active')
     })
 </script>
