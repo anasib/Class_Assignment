@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+        <title>Class Assignment</title>
+        <link rel="stylesheet" type="text/css" href="Assets/reset.css">
+        <link rel="stylesheet" type="text/css" href="Assets/styles.css">
+        <script src="https://code.jquery.com/jquery.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        
+    </head>
+<body>
+        <nav>
+                <div class="nav-wrapper">
+                  <a href="index.html" class="brand-logo">CDPA Restaurant</a>
+                  <ul class="right hide-on-med-and-down">
+                    <li>
+                      <a href="reserve.html">Make Reservations</a>
+                    </li>
+                    <!-- Dropdown Trigger -->
+                    <li>
+                      <a class="dropdown-trigger" href="#!" data-target="dropdown1">View Tables
+                        <i class="material-icons right">arrow_drop_down</i>
+                      </a>
+                      <ul id="dropdown1" class="dropdown-content" tabindex="0">
+                        <li tabindex="0">
+                            <a href="#!">Paul Park</a>
+                        </li>
+                        <li tabindex="0">
+                            <a href="#!">David Chen</a>
+                        </li>
+                        <li class="divider" tabindex="0"></li>
+                        <li tabindex="0">
+                        <a href="#!">Close</a>
+                        </li>
+                    </ul>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+
+              <div class="container">
+                    <div class="row">
+                          <div class="col-lg-12">
+                    
+                            <!-- Reservation Page -->
+                            <div class="panel panel-default">
+                              <div class="panel-heading">
+                                <h4 class="panel-title">Table Reservation</h4>
+                              </div>
+                              <div class="panel-body">
+                    
+                                <form role="form">
+                    
+                                  <div class="form-group">
+                                    <label for="reservation_name">Name</label>
+                                    <input type="text" class="form-control" id="reservation_name">
+                                  </div>
+      
+                                  <div class="form-group">
+                                    <label for="reservation_guest">Guest</label>
+                                    <input type="text" class="form-control" id="reservation_guest">
+                                  </div>
+                    
+                                  <div class="form-group">
+                                    <label for="reservation_phone">Phone Number</label>
+                                    <input type="text" class="form-control" id="reservation_phone">
+                                  </div>
+                    
+                                  <div class="form-group">
+                                    <label for="reservation_email">Email</label>
+                                    <input type="text" class="form-control" id="reservation_email">
+                                  </div>
+                    
+                                  <!-- <div class="form-group">
+                                    <label for="reserve-unique-id">Unique ID</label>
+                                    <input type="text" class="form-control" id="reserve-unique-id">
+                                  </div> -->
+                    
+                                  <button type="submit" class="btn btn-primary submit">Submit</button>
+                                </form>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+<script>
+    // ============= THIS IS FOR MAKING TABLE RESERVATIONS SHOW AND HIDE =============
+    $('#view_tables').on('click', function(event) {
+        event.preventDefault();
+        if($('.table_list').hasClass('active')) {
+            $('.table_list').removeClass('active');
+        }
+        else {
+            $('.table_list').addClass('active');
+        }
+    })
+    $('#make_reservations').on('click', function(event) {
+        $('.table_list').removeClass('active')
+    })
+    // ===============================================================================
+    
+    $('.submit').on('click', function(){
+        event.preventDefault();
+        var reserveGuest = {
+            customerName:$('#reservation_name').val().trim(),
+            customerGuest:$('#reservation_guest').val().trim(),
+            uniqueId:$('#reservation_phone').val().trim(),
+            customerEmail:$('#reservation_email').val().trim(),
+        }
+        console.log(reserveGuest);
+
+    })
+
+
+$( document ).ready(function() {
+    $(".dropdown-trigger").dropdown();
+});
+</script>
+</html>

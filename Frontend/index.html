@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+        <title>Class Assignment</title>
+        <link rel="stylesheet" type="text/css" href="Assets/reset.css">
+        <link rel="stylesheet" type="text/css" href="Assets/styles.css">
+        <script src="https://code.jquery.com/jquery.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        
+    </head>
+<body>
+        <nav>
+                <div class="nav-wrapper">
+                  <a href="index.html" class="brand-logo">CDPA Restaurant</a>
+                  <ul class="right hide-on-med-and-down">
+                    <li>
+                      <a href="reserve.html">Make Reservations</a>
+                    </li>
+                    <!-- Dropdown Trigger -->
+                    <li>
+                      <a class="dropdown-trigger" href="#!" data-target="dropdown1">View Tables
+                        <i class="material-icons right">arrow_drop_down</i>
+                      </a>
+                      <ul id="dropdown1" class="dropdown-content" tabindex="0">
+                        <li tabindex="0">
+                            <a href="#!">Paul Park</a>
+                        </li>
+                        <li tabindex="0">
+                            <a href="#!">David Chen</a>
+                        </li>
+                        <li class="divider" tabindex="0"></li>
+                        <li tabindex="0">
+                        <a href="#!">Close</a>
+                        </li>
+                    </ul>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+<script>
+$( document ).ready(function() {
+    $(".dropdown-trigger").dropdown();
+});
+</script>
+</html>
