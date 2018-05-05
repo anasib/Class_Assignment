@@ -16,5 +16,8 @@
     "url": "https://github.com/parkpaul94/Class_Assignment/issues"
   },
   "homepage": "https://github.com/parkpaul94/Class_Assignment#readme",
-  "dependencies": {}
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3"
+  }
 }
