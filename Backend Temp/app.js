@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
+const path = require('path');
 
 const PORT = process.env.PORT || 3000;
 
@@ -34,8 +35,8 @@ app.get('/customers', (req, res) => {
     return res.json(customers);
 });
 
-app.get('/api/reservations', (req, res) => {
-    res.sendFile(basePath + reservationPath, errHandler);
+app.get('/reservations', (req, res) => {
+    res.sendFile(path.join(__dirname, "../Frontend/reserve.html"), errHandler);
 });
 
 app.get('/api/waiting', (req, res) => {
