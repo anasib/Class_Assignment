@@ -46,7 +46,12 @@ app.get('/api/waiting', (req, res) => {
 //fill in
 app.post('/api/tables', (req, res) => {
     console.log(req.body);
-    res.json(req.body);
+    // res.json(req.body);
+    
+    customers.push(req.body);
+    console.log(JSON.stringify(customers, null, 2));
+    res.json(customers);
+
 });
 
 
