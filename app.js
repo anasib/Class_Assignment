@@ -30,17 +30,23 @@ var customers = [{
 app.get('/', (req, res) => res.send('Hello World!'));
 
 app.get('/customers', (req, res) => {
-    return res.json(customers)
+    return res.json(customers);
 });
 
-app.get('/api/reservations', (req, res) =>
-    res.sendFile(reservationPath, 'reservation.html'));
+app.get('/api/reservations', (req, res) => {
+    res.sendFile(reservationPath, 'reservation.html');
+});
 
-app.get('/api/waiting', (req, res) =>
-    res.sendFile(waitingList, 'waitlist.html'));
+app.get('/api/waiting', (req, res) => {
+    res.sendFile(waitingList, 'waitlist.html');
+
+});
 
 //fill in
-app.post('/api/tables', (req, res) => console.log(res));
+app.post('/api/tables', (req, res) => {
+    console.log(req.body);
+    res.json(req.body);
+});
 
 
-app.listen(PORT, () => console.log('Example app listening on port 3000!'))
+app.listen(PORT, () => console.log('Example app listening on port 3000!'));
