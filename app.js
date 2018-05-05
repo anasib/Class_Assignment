@@ -10,8 +10,9 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 var tablePath = "";
-var reservationPath = "";
-var waitingList = "";
+var basePath = "./"
+var reservationPath = "reservation.html";
+var waitingList = "waitlist.html";
 
 var customers = [{
         customerName: "David",
@@ -34,11 +35,11 @@ app.get('/customers', (req, res) => {
 });
 
 app.get('/api/reservations', (req, res) => {
-    res.sendFile(reservationPath, 'reservation.html');
+    res.sendFile(basePath + reservationPath, errHandler);
 });
 
 app.get('/api/waiting', (req, res) => {
-    res.sendFile(waitingList, 'waitlist.html');
+    res.sendFile(basePath + waitingList, errHandler);
 
 });
 
@@ -49,4 +50,13 @@ app.post('/api/tables', (req, res) => {
 });
 
 
-app.listen(PORT, () => console.log('Example app listening on port 3000!'));
+function errHandler(err) {
+    if (err) {
+        next(err);
+    } else {
+        console.log('Sent:', fileName);
+    }
+
+    app.listen(PORT, () => {
+        console.log('Example app listening on port 3000!')
+    });
